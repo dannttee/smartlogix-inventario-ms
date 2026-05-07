@@ -26,4 +26,8 @@ public class Producto {
 
     @Column(nullable = false)
     private String categoria;
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 }

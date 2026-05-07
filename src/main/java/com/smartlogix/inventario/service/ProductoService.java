@@ -2,17 +2,19 @@ package com.smartlogix.inventario.service;
 
 import com.smartlogix.inventario.entity.Producto;
 import com.smartlogix.inventario.repository.ProductoRepository;
-import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
 @Service
-@RequiredArgsConstructor
 public class ProductoService {
 
     private final ProductoRepository productoRepository;
+
+    public ProductoService(ProductoRepository productoRepository) {
+        this.productoRepository = productoRepository;
+    }
 
     public List<Producto> listarTodos() {
         return productoRepository.findAll();
